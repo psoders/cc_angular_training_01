@@ -95,10 +95,11 @@ angular
           "created_at": "2013-09-12T06:20:31+0000"
         }
       ];
-    ];
 
     // returns the current list of phones
     $httpBackend.whenGET('/comments').respond(comments);
+    $httpBackend.when('GET', '/users').respond(users);
+    $httpBackend.when('GET', '/users/1').respond(users[0]);
 
     // adds a new phone to the phones array
     $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
