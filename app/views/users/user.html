@@ -1,0 +1,22 @@
+<h3><img class="pull-right" src="http://placekitten.com/100/100"> {{ user.displayName }}</h3>
+
+<ol class="breadcrumb">
+    <li><a href="/#/">Home</a></li>
+    <li><a href="/#/users">Users</a></li>
+    <li class="active">{{ user.displayName }}</li>
+</ol>
+
+<dl class="dl-horizontal">
+    <dt>ID</dt>
+    <dd>{{ user.id }}</dd>
+    <dt>Display name</dt>
+    <dd>{{ user.displayName }}</dd>
+    <dt>Email</dt>
+    <dd>{{ user.email }}</dd>
+    <dt>Gender</dt>
+    <dd>{{ user.gender }}</dd>
+    <dt>Created at</dt>
+    <dd>{{ user.created_at | date: 'm/d/yyyy' }}</dd>
+    <dt>Updated at</dt>
+    <dd>{{ user.updated_at | date: 'm/d/yyyy' }}</dd>
+</dl>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jiraAngularTrainingApp')
-  .controller('UserCtrl', function ($scope) {
+  .controller('ProjectsProjectCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
