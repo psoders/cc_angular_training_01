@@ -15,7 +15,7 @@ angular
         controller: 'MainCtrl'
       })
       .when('/comments', {
-        templateUrl: 'views/comments.html',
+        templateUrl: 'views/comment/comments.html',
         controller: 'CommentsCtrl'
       })
       .when('/users/:id', {
@@ -54,7 +54,7 @@ angular
     $httpBackend.whenGET('/comments').respond(comments);
 
     // adds a new phone to the phones array
-    $httpBackend.whenPOST('/phones').respond(function(method, url, data) {
+    $httpBackend.whenPOST('/comments').respond(function(method, url, data) {
         var comment = angular.fromJson(data);
         comments.push(comment);
         return [200, comment, {}];
