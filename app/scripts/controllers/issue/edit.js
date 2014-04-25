@@ -15,7 +15,8 @@ angular.module('jiraAngularTrainingApp')
     }
     
     $scope.submitEdittedIssue = function(data) {
-        issues.postIssue(data);
+        console.log(issues);
+        issues.post();
     }
     
   });
