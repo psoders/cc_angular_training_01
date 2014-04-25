@@ -18,6 +18,18 @@ angular
         templateUrl: 'views/comments.html',
         controller: 'CommentsCtrl'
       })
+      .when('/users/:id', {
+        templateUrl: 'views/users/user.html',
+        controller: 'UsersUserCtrl'
+      })
+      .when('/users', {
+        templateUrl: 'views/users/users.html',
+        controller: 'UsersUsersCtrl'
+      })
+      .when('/projects/project', {
+        templateUrl: 'views/projects/project.html',
+        controller: 'ProjectsProjectCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

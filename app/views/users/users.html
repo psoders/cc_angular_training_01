@@ -1,0 +1,26 @@
+<h3>Users list</h3>
+
+<table class="table table-striped" ng-controller="UsersUsersCtrl">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Display name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Created at</th>
+            <th>Updated at</th>
+        </tr>
+    </thead>
+    <tbody ng-repeat="user in users">
+        <tr>
+            <td>{{ user.id }}</td>
+            <td><a href="/#/users/{{ user.id }}">{{ user.username }}</a></td>
+            <td>{{ user.displayName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.gender }}</td>
+            <td>{{ user.created_at | date: 'm/d/yyyy' }}</td>
+            <td>{{ user.updated_at | date: 'm/d/yyyy' }}</td>
+        </tr>
+    </tbody>
+</table>
