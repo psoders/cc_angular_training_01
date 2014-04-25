@@ -42,7 +42,7 @@ angular
         redirectTo: '/'
       });
   })
-  .run(function($httpBackend) {
+  .run(function($httpBackend,$routeParams) {
     var comments = [
         {
             body: 'asd',
@@ -98,9 +98,50 @@ angular
             "itemsCount": 1110
         }
     };
+      
+    var users = [
+      {
+        "id": 1,
+        "username": "ArekZc",
+        "email": "a.zajac@clearcode.cc",
+        "gender": "male",
+        "displayName": "Arek Zając",
+        "updated_at": "2013-09-12T06:20:31+0000",
+        "created_at": "2013-09-12T06:20:31+0000"
+      },
+      {
+        "id": 2,
+        "username": "ArekZc",
+        "email": "a.zajac@clearcode.cc",
+        "gender": "male",
+        "displayName": "Arek Zając",
+        "updated_at": "2013-09-12T06:20:31+0000",
+        "created_at": "2013-09-12T06:20:31+0000"
+      },
+      {
+        "id": 3,
+        "username": "ArekZc",
+        "email": "a.zajac@clearcode.cc",
+        "gender": "male",
+        "displayName": "Arek Zając",
+        "updated_at": "2013-09-12T06:20:31+0000",
+        "created_at": "2013-09-12T06:20:31+0000"
+      },
+      {
+        "id": 4,
+        "username": "ArekZc",
+        "email": "a.zajac@clearcode.cc",
+        "gender": "male",
+        "displayName": "Arek Zając",
+        "updated_at": "2013-09-12T06:20:31+0000",
+        "created_at": "2013-09-12T06:20:31+0000"
+      }
+    ];
 
     // returns the current list of comments
     $httpBackend.whenGET('/comments').respond(comments);
+    $httpBackend.when('GET', '/users').respond(users);
+    $httpBackend.when('GET', '/users/1').respond(users[0]);
 
     // returns the current list of phones
     $httpBackend.whenGET('/issues').respond(issuesResponse);
@@ -116,6 +157,14 @@ angular
     $httpBackend.whenPOST('/issues/add').respond(function(method, url, data) {
         var issue = angular.fromJson(data);
         issuesResponse.push(issue);
+        return [200, issuesResponse, {}];
+    });
+
+    $httpBackend.whenPOST('/issues/1/edit').respond(function(method, url, data) {
+        console.log($routeParams);
+        
+        var id = url.match(/\/issues\/(\d)+\/edit/)
+        issuesResponse[id] = data;
         return [200, issuesResponse, {}];
     });
     

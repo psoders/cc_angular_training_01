@@ -1,5 +1,10 @@
 <h3>Users list</h3>
 
+<ol class="breadcrumb">
+    <li><a href="/#/">Home</a></li>
+    <li class="active">Users</li>
+</ol>
+
 <table class="table table-striped" ng-controller="UsersUsersCtrl">
     <thead>
         <tr>
@@ -12,8 +17,8 @@
             <th>Updated at</th>
         </tr>
     </thead>
-    <tbody ng-repeat="user in users">
-        <tr>
+    <tbody>
+        <tr ng-repeat="user in users">
             <td>{{ user.id }}</td>
             <td><a href="/#/users/{{ user.id }}">{{ user.username }}</a></td>
             <td>{{ user.displayName }}</td>

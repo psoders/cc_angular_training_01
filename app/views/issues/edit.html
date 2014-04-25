@@ -6,23 +6,23 @@
     <li class="active">{{ issue.title }} (#{{ issue.id }})</li>
 </ol>
 
-<form role="form" class="form-horizontal" action="/#/issues/{{ issue.id }}/edit">
+<form role="form" class="form-horizontal" ng-submit="submitEdittedIssue()">
     <div class="form-group">
         <label class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">
-            <input value="{{ issue.title }}" placeholder="title" />
+            <input value="{{ issue.title }}" name="title" placeholder="title" />
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label">Description</label>
         <div class="col-sm-10">
-            <textarea>{{ issue.description }}</textarea>
+            <textarea name="description">{{ issue.description }}</textarea>
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label">Assignee</label>
         <div class="col-sm-10">
-            <select>
+            <select name="asignee">
                 <option>Arek Zając</option>
                 <option>Kamil Zając</option>
                 <option>Paweł Szczepański</option>
@@ -32,7 +32,7 @@
     <div class="form-group">
         <label class="col-sm-2 control-label">Priority</label>
         <div class="col-sm-10">
-            <select>
+            <select name="priority">
                 <option>Hi</option>
                 <option>Med</option>
                 <option>Low</option>
