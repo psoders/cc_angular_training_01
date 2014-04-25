@@ -1,5 +1,10 @@
 <h1>List of issues</h1>
-        
+       
+<ol class="breadcrumb">
+    <li><a href="/#/">Home</a></li>
+    <li class="active"><a href="/#/issues/list">Issues</a></li>
+</ol>
+
 <table class="table table-striped table-responsive table-bordered">
     <thead>
         <tr>
@@ -26,8 +31,8 @@
             <td>{{ issue.priority }}</td>
             <td>{{ issue.assignee }}</td>
             <td>
-                <a href="#">edit</a> |
-                <a href="#">remove</a>
+                <a href="/#/issue/{{ issue.id}}/edit">edit</a> &bull;
+                <a href="/#/issue/{{ issue.id}}/delete">remove</a>
             </td>
         </tr>
     </tbody>
