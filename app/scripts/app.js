@@ -23,8 +23,8 @@ angular
         controller: 'IssueIssuesCtrl'
       })
      .when('/comments', {
-        templateUrl: 'views/comments.html',
-        controller: 'CommentsCtrl'
+        templateUrl: 'views/comments/comments.html',
+        controller: 'CommentsCommentsCtrl'
       })
       .when('/users/:id', {
         templateUrl: 'views/users/user.html',
@@ -34,7 +34,11 @@ angular
         templateUrl: 'views/users/users.html',
         controller: 'UsersUsersCtrl'
       })
-      .when('/projects/project', {
+      .when('/projects', {
+        templateUrl: 'views/projects/projects.html',
+        controller: 'ProjectsProjectsCtrl'
+      })
+      .when('/projects/:id', {
         templateUrl: 'views/projects/project.html',
         controller: 'ProjectsProjectCtrl'
       })

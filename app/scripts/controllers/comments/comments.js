@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('jiraAngularTrainingApp')
-  .controller('CommentsCtrl', function ($scope, $http) {
+  .controller('CommentsCommentsCtrl', function ($scope, $http) {
     $scope.comments = [];
     $http({method: 'GET', url: '/comments'}).
       success(function(data) {

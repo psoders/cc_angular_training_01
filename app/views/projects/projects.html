@@ -1,25 +1,10 @@
-<h3><img class="pull-right" src="http://placekitten.com/100/100"> {{ project.name }}</h3>
+<h3>Projects list</h3>
 
 <ol class="breadcrumb">
     <li><a href="/#/">Home</a></li>
-    <li><a href="/#/projects">Projects</a></li>
-    <li class="active">{{ project.name }}</li>
+    <li class="active">Projects</li>
 </ol>
 
-<dl class="dl-horizontal">
-    <dt>Key</dt>
-    <dd>{{ project.key }}</dd>
-    <dt>Name</dt>
-    <dd><a href="{{ project.url }}">{{ project.name }}</a></dd>
-    <dt>Leader</dt>
-    <dd>{{ project.leader.displayName }}</dd>
-    <dt>Created at</dt>
-    <dd>{{ project.created_at | date: 'm/d/yyyy' }}</dd>
-    <dt>Updated at</dt>
-    <dd>{{ project.updated_at | date: 'm/d/yyyy' }}</dd>
-</dl>
-
-<!--<h3>Issues</h3>
 <table class="table table-striped" ng-controller="ProjectsProjectsCtrl">
     <thead>
         <tr>
@@ -41,4 +26,4 @@
             <td>{{ project.updated_at | date: 'm/d/yyyy' }}</td>
         </tr>
     </tbody>
-</table>-->
+</table>
